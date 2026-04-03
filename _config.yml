@@ -361,7 +361,7 @@ plugins:
 
 # Used on index and about sites
 social:
-  name:Ben Banks
+  name: Ben Banks
   links:
       - https://www.linkedin.com/in/benjamin-banks
 #     - https://github.com/<username>
