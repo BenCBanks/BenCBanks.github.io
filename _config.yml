@@ -363,7 +363,7 @@ plugins:
 social:
   name:Ben Banks
   links:
-  https://www.linkedin.com/in/benjamin-banks
+      - https://www.linkedin.com/in/benjamin-banks
 #     - https://github.com/<username>
 
 
