@@ -2,7 +2,7 @@
 # Must be the same as `author` in `_config.yml`.
 author1:
   name:              Ben Banks
-  email:             Ben@TheBanks.io
+  email:             Ben@theBanks.io
 
   # Used at the bottom of each page and at the top of the `about` layout
   about:             |

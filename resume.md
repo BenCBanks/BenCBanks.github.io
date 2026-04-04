@@ -12,7 +12,7 @@ hide_description: true
 
 ## Ben Banks
 **Payments & Digital Professional**  
-[Ben@TheBanks.io](mailto:Ben@theBanks.io) · [LinkedIn](https://www.linkedin.com/in/benjamin-banks)
+[Ben@theBanks.io](mailto:Ben@theBanks.io) · [LinkedIn](https://www.linkedin.com/in/benjamin-banks)
 
 ---
 
