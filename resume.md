@@ -6,7 +6,7 @@ description: >
 hide_description: true
 ---
 
-[Download PDF](/assets/img/Ben_Banks_Resume.pdf){:.btn.btn-primary}
+<a href="/assets/img/Ben_Banks_Resume.pdf" class="btn btn-primary" download>Download PDF</a>
 
 ---
 

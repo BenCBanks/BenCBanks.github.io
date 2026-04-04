@@ -1,1 +1,6 @@
 // Add custom CSS rules here.
+
+// Hide heading anchor links (the # that appears after headings)
+.heading-anchor {
+  display: none;
+}
