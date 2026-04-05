@@ -2,7 +2,7 @@
 layout: about
 title: About
 description: About Ben Banks — payments professional, digital enthusiast, and tinkerer.
-image: /assets/img/other/2025 Profile Picture.jpeg
+image: /assets/img/other/2025 Profile Picture_Medium.jpeg
 resume: /assets/img/Ben_Banks_Resume.pdf
 timeline:
   - years: "2022–Now"
