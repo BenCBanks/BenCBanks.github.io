@@ -58,6 +58,8 @@ exclude:
   - Gemfile.lock
   - node_modules
   - '*.toml'
+  - LICENSE.md
+  - README.md
 include:
   - .well-known
 
