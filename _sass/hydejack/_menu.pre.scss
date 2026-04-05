@@ -85,7 +85,6 @@ $navbar-height: 5rem;
 .nav-btn-bar {
   @extend .color-transition;
   margin: 0 -1rem;
-  background-color: white; // IE11
   background-color: var(--body-bg);
   height: $navbar-height;
   display: flex;
