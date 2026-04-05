@@ -167,7 +167,7 @@ hydejack:
   no_drawer:           false
 
   # Set to `true` if you don't want to use the auto-hiding (JavaScript based) navbar.
-  no_navbar:           false
+  no_navbar:           true
 
   # Set to true to disable the built-in search functionality.
   # Note that search is disabled during local use to save on build time.
