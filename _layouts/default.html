@@ -1,56 +1,43 @@
----
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.title %}
+  <title>{{ page.title }} — {{ site.title }}</title>
+  {% else %}
+  <title>{{ site.title }}</title>
+  {% endif %}
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
+  {% seo %}
+</head>
+<body>
 
-layout: base
----
+<header class="site-header">
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="{{ site.title }}">
+      <span class="logo-mark" aria-hidden="true">BB</span>
+      <span class="logo-text">Ben Banks</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active" aria-current="page"{% endif %}>Projects</a></li>
+      <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active" aria-current="page"{% endif %}>About</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}"{% if page.url contains '/contact' %} class="active" aria-current="page"{% endif %}>Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-{% assign strings = site.data.strings %}
-
-<article class="page" role="article">
-  <header>
-    <h1 class="page-title">{{ page.title | default:strings.home | default:"Home" }}</h1>
-    {% include components/message.html text=page.description hide=page.hide_description %}
-  </header>
-
+<main class="site-main" id="main-content">
   {{ content }}
+</main>
 
-  <hr class="dingbat related"/>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Ben Banks &middot; <a href="mailto:Ben@theBanks.io">Ben@theBanks.io</a> &middot; <a href="https://www.linkedin.com/in/benjamin-banks" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+  </div>
+</footer>
 
-  {% if site.posts.size > 0 %}
-    <h2 class="hr-bottom">{{ strings.posts | default:"Posts" }}</h2>
-    <ul class="related-posts">
-      {% for post in site.posts limit:5 %}
-        {% include_cached components/post-list-item.html post=post %}
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  {% assign pages = site.html_pages | where:"layout","page" | where_exp:"page","page.sitemap != false" %}
-  {% if pages.size > 0 %}
-    <h2 class="hr-bottom">{{ strings.pages | default:"Pages" }}</h2>
-    <ul class="related-posts">
-      {% for page in pages limit:5 %}
-        {% if page.layout == 'page' %}
-          <li class="h4">
-            <a href="{{ page.url | relative_url }}" class="flip-title">
-              <span>{{ page.title }}</span>
-            </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  {% endif %}
-</article>
+</body>
+</html>

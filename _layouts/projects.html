@@ -1,17 +1,21 @@
 ---
 layout: default
 ---
-<header class="tag-header">
-  <span class="tag-label">Topic</span>
-  <h1>{{ page.title }}</h1>
-  <a href="{{ '/' | relative_url }}" class="tag-back">← All projects</a>
-</header>
+<div class="projects-header">
+  <h1>Projects</h1>
+  <p>Essays, analysis, and opinions on payments, fintech, and digital.</p>
+</div>
 
-{% assign tag_slug = page.slug | default: page.title | downcase %}
-{% assign filtered = site.posts | where_exp: "post", "post.tags contains tag_slug" %}
+{% if site.featured_tags.size > 0 %}
+<nav class="project-filters" aria-label="Filter by topic">
+  {% for tag in site.featured_tags %}
+  <a href="{{ tag.url | relative_url }}" class="filter-tag">{{ tag.title }}</a>
+  {% endfor %}
+</nav>
+{% endif %}
 
 <ul class="project-list">
-  {% for post in filtered %}
+  {% for post in site.posts %}
   <li class="project-item">
     <div class="project-meta">
       {% if post.type %}

@@ -1,46 +1,36 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-layout: base
+layout: default
 ---
+<div class="about-intro">
+  <div class="about-bio">
+    <h1>Ben Banks</h1>
+    {{ content }}
 
-<article class="page mb6" role="article">
-  {% if content contains "<!--author-->" %}
-    {% assign plugins = site.plugins | default:site.gems %}
-    {% assign author = site.data.authors[page.author] | default:site.data.authors.first[1] | default:site.author %}
-    {% capture author_x %}
-      {% if author.picture %}
-        {% include_cached components/hy-img.html class="avatar" img=author.picture alt=author.name %}
-      {% elsif plugins contains 'jekyll-avatar' %}
-        {% assign avatar = author.social.github | default:author.github.username | default:author.github %}
-        {% include components/avatar-tag.html user=avatar %}
-      {% endif %}
+    <div class="about-actions">
+      <a href="{{ page.resume | default: '/assets/img/Ben_Banks_Resume.pdf' }}" class="btn-download" target="_blank" rel="noopener noreferrer">
+        Download Resume
+      </a>
+    </div>
+  </div>
 
-      {{ author.about | markdownify }}
-    {% endcapture %}
-    {% assign content = content | replace:"<!--author-->", author_x %}
+  {% if page.image %}
+  <img src="{{ page.image | relative_url }}" alt="Ben Banks" class="about-photo">
   {% endif %}
+</div>
 
-  <header>
-    <h1 class="page-title">{{ page.title }}</h1>
-    {% include components/message.html text=page.description hide=page.hide_description %}
-  </header>
-
-  {{ content }}
-</article>
-
-{% include components/dingbat.html %}
-{% include body/comments.html %}
+{% if page.timeline %}
+<div class="timeline">
+  <p class="timeline-heading">Experience</p>
+  <ul class="timeline-list">
+    {% for item in page.timeline %}
+    <li class="timeline-item">
+      <span class="timeline-year">{{ item.years }}</span>
+      <div>
+        <div class="timeline-role">{{ item.role }}</div>
+        <div class="timeline-org">{{ item.org }}</div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

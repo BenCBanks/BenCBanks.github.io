@@ -1,0 +1,563 @@
+---
+---
+
+/* ===================================================
+   Ben Banks — main.scss
+   =================================================== */
+
+/* --- CSS Variables --- */
+:root {
+  --bg:          #faf9f7;
+  --surface:     #ffffff;
+  --text:        #1a1a1a;
+  --text-muted:  #6b7280;
+  --accent:      #aeb8a4;
+  --accent-dark: #8a9882;
+  --border:      #e5e2dd;
+  --tag-bg:      #f0ede8;
+  --radius:      4px;
+  --max-w:       680px;
+  --max-w-wide:  920px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+a:hover {
+  color: var(--accent-dark);
+  text-decoration-color: var(--accent-dark);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ===================================================
+   Navigation
+   =================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  gap: 1rem;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.site-logo:hover { text-decoration: none; }
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+/* ===================================================
+   Layout
+   =================================================== */
+
+.site-main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* ===================================================
+   Projects index
+   =================================================== */
+
+.projects-header {
+  margin-bottom: 2rem;
+}
+
+.projects-header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.projects-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.filter-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  background: transparent;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.filter-tag:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  background: var(--tag-bg);
+  text-decoration: none;
+}
+
+.project-list { list-style: none; }
+
+.project-item {
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.project-item:first-child { border-top: 1px solid var(--border); }
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Type badges */
+.type-badge {
+  display: inline-block;
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius);
+}
+.type-badge--Essay    { background: #e8ede5; color: #3d5e38; }
+.type-badge--Analysis { background: #e3eaf0; color: #2e5870; }
+.type-badge--Opinion  { background: #f0e8e3; color: #7a4030; }
+.type-badge--default  { background: var(--tag-bg); color: var(--text-muted); }
+
+.project-title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  margin-bottom: 0.3rem;
+  line-height: 1.35;
+}
+.project-title:hover { color: var(--accent-dark); text-decoration: none; }
+
+.project-description {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ===================================================
+   Post layout
+   =================================================== */
+
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+.post-back:hover { color: var(--text); text-decoration: none; }
+
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-header .project-meta { margin-bottom: 0.75rem; }
+
+.post-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.post-description {
+  color: var(--text-muted);
+  font-size: 0.975rem;
+  line-height: 1.6;
+}
+
+/* Post content typography */
+.post-content { line-height: 1.75; }
+.post-content h2 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 0.6rem; letter-spacing: -0.01em; }
+.post-content h3 { font-size: 1rem; font-weight: 700; margin: 1.5rem 0 0.5rem; }
+.post-content p  { margin-bottom: 1.25rem; }
+.post-content ul,
+.post-content ol { margin: 0 0 1.25rem 1.5rem; }
+.post-content li { margin-bottom: 0.35rem; }
+.post-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+.post-content code {
+  font-family: "Fira Code", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875em;
+  background: var(--tag-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+.post-content pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+.post-content pre code { background: none; color: inherit; padding: 0; font-size: 0.875rem; }
+
+/* ===================================================
+   Tag list page
+   =================================================== */
+
+.tag-header { margin-bottom: 2rem; }
+
+.tag-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 0.35rem;
+}
+
+.tag-header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.tag-back {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.tag-back:hover { color: var(--text); }
+
+/* ===================================================
+   About page
+   =================================================== */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.about-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  flex-shrink: 0;
+}
+
+.about-bio h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+.about-bio p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.about-actions { margin-top: 1.5rem; }
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.2rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn-download:hover { background: var(--accent-dark); color: #fff; text-decoration: none; }
+
+/* Timeline */
+.timeline {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.timeline-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.35rem;
+}
+
+.timeline-list { list-style: none; }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.75rem 1rem;
+  padding-bottom: 1.1rem;
+}
+
+.timeline-year {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding-top: 0.2rem;
+}
+
+.timeline-role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.timeline-org {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ===================================================
+   Contact page
+   =================================================== */
+
+.contact-header { margin-bottom: 2rem; }
+.contact-header h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+.contact-header p  { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  background: var(--surface);
+  transition: border-color 0.15s, background 0.15s;
+}
+.contact-link:hover {
+  border-color: var(--accent);
+  background: var(--tag-bg);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: var(--tag-bg);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+.contact-link:hover .contact-icon { background: var(--border); }
+
+.contact-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.925rem;
+}
+
+.contact-detail {
+  display: block;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+/* ===================================================
+   404 page
+   =================================================== */
+
+.not-found {
+  text-align: center;
+  padding: 5rem 0;
+}
+.not-found h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.not-found p {
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+/* ===================================================
+   Footer
+   =================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.footer-inner {
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+}
+
+.footer-inner p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.footer-inner a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.footer-inner a:hover { color: var(--text); }
+
+/* ===================================================
+   Utilities
+   =================================================== */
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* ===================================================
+   Responsive
+   =================================================== */
+
+@media (max-width: 600px) {
+  .site-nav   { padding: 0.75rem 1rem; }
+  .logo-text  { display: none; }
+  .nav-links  { gap: 1.1rem; }
+  .site-main  { padding: 2rem 1rem 4rem; }
+  .post-title { font-size: 1.4rem; }
+
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .about-photo { width: 80px; height: 80px; }
+
+  .timeline-item { grid-template-columns: 1fr; gap: 0.15rem; }
+  .timeline-year { padding-top: 0; }
+}
