@@ -77,9 +77,9 @@ paginate_path:         /:num/
 # This will use the gem `jekyll-theme-hydejack`, as defined in the sibling `Gemfile`.
 # theme: jekyll-theme-hydejack
 
-# `remote_theme` fetches the theme from GitHub Pages (legacy pipeline).
-# This will fetch the `v9` branch of the public Hydejack repository on GitHub.
-remote_theme: hydecorp/hydejack@v9
+# Use the locally installed gem instead of remote_theme.
+# This requires building via GitHub Actions (see .github/workflows/jekyll.yml).
+theme: jekyll-theme-hydejack
 
 
 # Customization
