@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:bencbanks.github.io)"
+      "WebFetch(domain:bencbanks.github.io)",
+      "Bash(bundle exec:*)"
     ]
   }
 }
