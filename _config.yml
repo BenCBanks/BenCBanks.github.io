@@ -87,9 +87,9 @@ theme: jekyll-theme-hydejack
 
 # Sidebar image and theme color of the site.
 accent_image:
-  background: rgb(242,240,239)
+  background: "#aeb8a4"
   overlay: false
-accent_color:          rgb(242,240,239)
+accent_color:          "#aeb8a4"
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
