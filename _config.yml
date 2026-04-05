@@ -87,9 +87,9 @@ remote_theme: hydecorp/hydejack@v9
 
 # Sidebar image and theme color of the site.
 accent_image:
-  background: rgb(255,255,255)
+  background: rgb(242,240,239)
   overlay: false
-accent_color:          rgb(255,255,255)
+accent_color:          rgb(242,240,239)
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
@@ -167,7 +167,7 @@ hydejack:
   no_drawer:           false
 
   # Set to `true` if you don't want to use the auto-hiding (JavaScript based) navbar.
-  no_navbar:           true
+  no_navbar:           false
 
   # Set to true to disable the built-in search functionality.
   # Note that search is disabled during local use to save on build time.
@@ -180,7 +180,7 @@ hydejack:
 
   # Set to `true` if you don't intend on changing the accent color on a per-page basis.
   # This will increase site build speed!
-  no_page_style:       false
+  no_page_style:       true
 
   # Code blocks and tables "break" the layout by spanning the full available width.
   # Set this to true if you want them to be the same width as other content.
@@ -194,7 +194,7 @@ hydejack:
   no_third_column:     false
 
   # Set to `true` if you don't like oversized headlines on large screens.
-  no_large_headings:   false
+  no_large_headings:   true
 
   # Set to `true` if you do not want to expose your resume and projects
   # in machine-readable formats.
