@@ -19,8 +19,10 @@ timeline:
     org: "First Citizens Bank"
 ---
 
-I'm Ben Banks — a payments and digital professional based in [Your Location].
+I’m Ben Banks—a digital and payments professional based in the Queen City (Charlotte, NC).
 
-I spend my time working at the intersection of financial technology, digital products, and whatever interesting problem is in front of me. Outside of work, I enjoy tinkering with software, writing, and exploring new ideas.
+I’m passionate about identifying opportunities at the intersection of digital, finance, and people—grounded in a deep understanding of the “why” and validated through data.
+
+Outside of work, I enjoy tinkering with home automation and software, running a few miles each day, and finding creative ways to travel with my wife using points. I’m also the proud owner of a (slightly monstrous) Dachshund.
 
 Feel free to connect on [LinkedIn](https://www.linkedin.com/in/benjamin-banks) or reach out at [Ben@theBanks.io](mailto:Ben@theBanks.io).
