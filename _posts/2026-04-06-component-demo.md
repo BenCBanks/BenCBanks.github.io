@@ -4,6 +4,7 @@ title: Post Component Demo
 type: Essay
 description: A reference post showing every available formatting component — pull quotes, stat grids, highlight boxes, and code blocks.
 tags: [meta]
+published: false
 ---
 
 This post exists as a reference. Each section below shows one component you can drop into any future post. The source file lives at `_posts/2026-04-06-component-demo.md`.
