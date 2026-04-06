@@ -2,20 +2,18 @@
 layout: default
 ---
 <div class="about-intro">
-  <div class="about-bio">
-    <h1>Ben Banks</h1>
-    {{ content }}
-
-    <div class="about-actions">
-      <a href="{{ page.resume | default: '/assets/img/Ben_Banks_Resume.pdf' }}" class="btn-download" target="_blank" rel="noopener noreferrer">
-        Download Resume
-      </a>
-    </div>
-  </div>
-
   {% if page.image %}
   <img src="{{ page.image | relative_url }}" alt="Ben Banks" class="about-photo">
   {% endif %}
+
+  <h1>Ben Banks</h1>
+  {{ content }}
+
+  <div class="about-actions">
+    <a href="{{ page.resume | default: '/assets/img/Ben_Banks_Resume.pdf' }}" class="btn-download" target="_blank" rel="noopener noreferrer">
+      Download Resume
+    </a>
+  </div>
 </div>
 
 {% if page.timeline %}
