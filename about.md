@@ -6,14 +6,17 @@ image: /assets/img/other/2025 Profile Picture_Medium.jpeg
 resume: /assets/img/Ben_Banks_Resume.pdf
 timeline:
   - years: "2022–Now"
-    role: "[Your Role]"
-    org: "[Your Company]"
-  - years: "2019–2022"
-    role: "[Your Role]"
-    org: "[Your Company]"
-  - years: "2016–2019"
-    role: "[Your Role]"
-    org: "[Your Company]"
+    role: "Senior Product Manager | Payments"
+    org: "Blue Cross NC"
+  - years: "2021–2022"
+    role: "Product Manager | Fraud Prevention"
+    org: "Featurespace"
+  - years: "2019–2021"
+    role: "Product Manager | Treasury"
+    org: "First Citizens Bank"
+  - years: "2017–2019"
+    role: "Analyst"
+    org: "First Citizens Bank"
 ---
 
 I'm Ben Banks — a payments and digital professional based in [Your Location].
